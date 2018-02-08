@@ -7,6 +7,7 @@ app.get('/api/:target', asyncHandler(async (req, res, next) => {
     let url = 'http://'+req.params.target+':8080/api'
     console.log(url)
     let data = await axios.get(url)
+    console.log(data)
     res.send(data)
 }))
 
