@@ -8,7 +8,7 @@ app.get('/api/:target', asyncHandler(async (req, res, next) => {
     console.log(url)
     let data = await axios.get(url)
     console.log(data)
-    res.send(data)
+    res.send(data.status)
 }))
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'))
