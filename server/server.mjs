@@ -1,5 +1,5 @@
 import express from 'express'
-const asyncHandler = require('express-async-handler')
+import asyncHandler from 'express-async-handler'
 import axios from 'axios'
 const app = express()
 
