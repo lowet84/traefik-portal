@@ -1,0 +1,23 @@
+{
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "vue",
+    {
+      "language": "html",
+      "autoFix": true
+    }
+  ],
+  "git.confirmSync": false,
+  "editor.tabSize": 2,
+  "eslint.autoFixOnSave": true,
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "git.enableSmartCommit": true,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
+  "vetur.format.defaultFormatter.ts": "prettier",
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
+  "prettier.eslintIntegration": true
+}

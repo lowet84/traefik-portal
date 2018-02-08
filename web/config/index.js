@@ -12,8 +12,11 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        target: 'https://portal.fredriklowenhamn.com',
-        changeOrigin: true
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': '/dummy'
+        }
       }
     },
 

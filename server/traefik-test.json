@@ -1,5 +1,5 @@
-[
-    {
+{
+    "public": {
         "file": {
             "backends": {
                 "guacamole": {
@@ -134,7 +134,7 @@
             }
         }
     },
-    {
+    "traefik" :{
         "docker": {
             "backends": {
                 "backend-portainer": {
@@ -222,20 +222,6 @@
                     "priority": 0,
                     "basicAuth": []
                 },
-                "frontend-Host-resume-local-2": {
-                    "entryPoints": [
-                        "http"
-                    ],
-                    "backend": "backend-resume",
-                    "routes": {
-                        "route-frontend-Host-resume-local-2": {
-                            "rule": "Host:resume.local"
-                        }
-                    },
-                    "passHostHeader": true,
-                    "priority": 0,
-                    "basicAuth": []
-                },
                 "frontend-Host-rethinkdb-fredriklowenhamn-com-4": {
                     "entryPoints": [
                         "http"
@@ -267,4 +253,4 @@
             }
         }
     }
-]
+}
