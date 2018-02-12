@@ -12,11 +12,12 @@ var hosts = process.env.TRAEFIK === undefined
 hosts = hosts.split(',')
 app.get('/api/', asyncHandler(async (req, res, next) => {
     var data = []
-    hosts.forEach(async function (host) {
+    for (let index = 0; index < hosts.length; index++) {
+        const host = hosts[index];
         let url = 'http://' + host + ':8080/api'
         let result = await axios.get(url)
         data.push(result.data)
-    })
+    }
 
     res.send(await prepareData(data))
 }))
