@@ -29,6 +29,7 @@ app.get('/dummy/', asyncHandler(async (req, res, next) => {
 var prepareData = async function (data) {
     let images = JSON.parse(await fs.readFileSync('./images.json', 'utf8'))
     var ret = []
+    console.log(data)
     data.forEach(d => Object.values(Object.values(d)[0].frontends).forEach(e => ret.push(e)))
     ret = ret
         .filter(d => Object.values(d.routes)[0].rule.startsWith('Host:'))
