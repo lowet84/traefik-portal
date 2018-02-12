@@ -1,10 +1,11 @@
 FROM alpine as client
-RUN RUN apk add --no-cache nodejs-npm
+RUN apk add --no-cache nodejs-npm
 RUN mkdir /web
 ADD web/package* /web/
 WORKDIR /web
 RUN npm install
-RUN npm build
+ADD web /web
+RUN npm run build
 
 FROM alpine
 RUN apk add --no-cache nodejs-npm
