@@ -1,5 +1,5 @@
-{
-    "public": {
+[
+    {
         "file": {
             "backends": {
                 "guacamole": {
@@ -134,7 +134,7 @@
             }
         }
     },
-    "traefik" :{
+    {
         "docker": {
             "backends": {
                 "backend-portainer": {
@@ -253,4 +253,4 @@
             }
         }
     }
-}
+]
