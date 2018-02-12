@@ -15,10 +15,10 @@ app.get('/api/', asyncHandler(async (req, res, next) => {
     await hosts.forEach(async function (host) {
         let url = 'http://' + host + ':8080/api'
         let result = await axios.get(url)
-        data.push(result)
+        data.push(result.data)
     })
 
-    res.send(prepareData(data.data))
+    res.send(await prepareData(data))
 }))
 
 app.get('/dummy/', asyncHandler(async (req, res, next) => {
