@@ -1,7 +1,7 @@
-import express from 'express'
-import asyncHandler from 'express-async-handler'
-import axios from 'axios'
-import fs from 'fs'
+var express = require('express')
+var asyncHandler = require('express-async-handler')
+var axios = require('axios')
+var fs = require('fs')
 
 const app = express()
 app.use(express.json());
@@ -18,8 +18,8 @@ app.get('/api/', asyncHandler(async (req, res, next) => {
         let result = await axios.get(url)
         data.push(result.data)
     }
-
-    res.send(await prepareData(data))
+    
+    res.send(await prepareData(data));
 }))
 
 app.get('/dummy/', asyncHandler(async (req, res, next) => {
@@ -48,7 +48,7 @@ app.post('/download', asyncHandler(async (req, res) => {
     console.log(req.body)
     let images = JSON.parse(await fs.readFileSync('./images.json', 'utf8'))
     images[req.body.id] = req.body.url
-    await fs.writeFileSync('./images.json',JSON.stringify(images))
+    await fs.writeFileSync('./images.json', JSON.stringify(images))
 }))
 
 app.use(express.static('static'))

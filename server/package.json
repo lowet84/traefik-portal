@@ -9,7 +9,9 @@
     "express": "^4.16.2",
     "express-async-handler": "^1.0.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint-plugin-standard": "^3.0.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node --experimental-modules server.mjs"
