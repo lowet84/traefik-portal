@@ -11,6 +11,8 @@ services:
       - traefik.frontend.passHostHeader=true
       - traefik.port=3000
       - traefik.frontend.rule=Host:portal.fredriklowenhamn.com
+    volumes:
+      - /storage/Settings/portal:/data
 
 networks:
   homeserver2:
