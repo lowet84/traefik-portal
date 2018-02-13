@@ -51,7 +51,7 @@ app.post('/download', asyncHandler(async (req, res) => {
     console.log(req.body)
     let images = JSON.parse(await fs.readFileSync(`${imagePath}/images.json`, 'utf8'))
     images[req.body.id] = req.body.url
-    await fs.writeFileSync('./images.json', JSON.stringify(images))
+    await fs.writeFileSync(`${imagePath}/images.json`, JSON.stringify(images))
 }))
 
 app.use(express.static('static'))
